@@ -29,7 +29,7 @@ The focus is on improving my skills with **React**, **TypeScript**, and **API in
 ```bash
 
 git clone #add repo
-cd weathersnap
+cd weather-snap
 npm install
 npm run dev
 
