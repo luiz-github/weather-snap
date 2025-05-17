@@ -1,11 +1,11 @@
 # 🌤️ WeatherSnap
 
 WeatherSnap is a simple and modern weather app built with **React**, **Vite**, **TypeScript** and **Tailwind CSS**.  
-It allows users to search for real-time weather information by city name *(currently supports only U.S. cities)*.
+It allows users to search for real-time weather information by city name.
 
 ## 🚀 Features
 
-- 🔍 Search weather by city name (USA only)
+- 🔍 Search weather by city name
 - 🌡️ Shows temperature, humidity, and general conditions
 - ⚡ Fast performance with Vite
 - 🎨 Responsive and clean UI with Tailwind
