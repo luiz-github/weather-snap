@@ -8,11 +8,19 @@ export class WeatherApi {
     }
 
     async getWeather(city: string): Promise<any> {
-        const response = await fetch(`${this.baseUrl}?q=${city}&appid=${this.apiKey}`);
+        const response = await fetch(`${this.baseUrl}?q=${city}&units=imperial&appid=${this.apiKey}`);
+        
+        const url = `${this.baseUrl}?q=${city}&units=imperial&appid=${this.apiKey}`;
+        console.log(url)
 
         const data = await response.json();
-
-        console.log(data);
+        console.log(data); // console prints the API consult response
         return data;
+    }
+
+    getWeatherIcon(iconCode: string): string {
+        const response = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+        console.log(response);
+        return response;
     }
 }
