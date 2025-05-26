@@ -1,5 +1,3 @@
-import "./card.css";
-
 const Card = ({ ...props }) => {
 
     const cityName = props.cityName;
@@ -13,21 +11,23 @@ const Card = ({ ...props }) => {
     const feelsLike = Math.round(props.feelsLike);
 
     return (
-        <div className="mt-5 ml-5 mr-5 block max-w-sm p-10 bg-white border border-gray-200 rounded-lg shadow-lg max-sm:flex-1 max-sm:ml-0 max-sm:mr-0 max-sm:max-w-screen">
+        <div className="flex flex-col h-full w-full p-10 bg-white border border-gray-200 rounded-lg shadow-lg gap-y-7 justify-center">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center">
                 Weather now in { cityName }
             </h5>
-            <div className="flex items-center max-sm:justify-center max-sm:flex-col max-sm:items-center max-sm:mb-6">{/* current weather */}
-                <img src={ weatherIcon } className="size-40" />
+
+            <div className="flex items-center justify-center max-sm:flex-col max-sm:items-center max-sm:mb-6">{/* current weather */}
+                <img src={ weatherIcon } className=" flex-initial" />
                 <div className="font-semibold">
-                    <p className="text-5xl inline tracking-tight mr-3">{ temperature }°</p>
-                    <p className="text-3xl inline">F</p>
+                    <p className="text-5xl inline tracking-tight">{ temperature }°<span className="text-3xl">F</span></p>
                 </div>
             </div>
+
             <div className="mb-5 max-sm:hidden">
                 <p className="text-center">Feels like: { feelsLike }°</p>
             </div>
-            <ul>
+
+            <ul className="flex flex-col">
                 <li className="flex justify-between border-b border-gray-300 p-5">
                     <p>Temperature</p>
                     <div className="space-x-2">
@@ -54,6 +54,7 @@ const Card = ({ ...props }) => {
                     </div>
                 </li>
             </ul>
+
         </div>
 
     );
