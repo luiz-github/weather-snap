@@ -4,13 +4,14 @@ export class WeatherApi {
     private baseForecastURL: string;
 
     constructor() {
-        this.apiKey = "fadb73083dda3bffc1adcd2ab6a4719d";
+        this.apiKey = import.meta.env.VITE_APIKEY;
         this.baseWeatherURL = "https://api.openweathermap.org/data/2.5/weather";
         this.baseForecastURL = "https://api.openweathermap.org/data/2.5/forecast";
     }
 
     //get current weather
     async getWeather(city: string): Promise<any> {
+        console.log(this.apiKey)
         const response = await fetch(`${ this.baseWeatherURL }?q=${city}&units=imperial&appid=${ this.apiKey }`);
 
         const data = await response.json();

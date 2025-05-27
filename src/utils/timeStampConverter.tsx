@@ -3,13 +3,14 @@ export default function formatUnixTimestamp(timestampInt: number) {
   
     const date = new Date(timestampMs);
 
-    const options = {
+    const options: Intl.DateTimeFormatOptions = {
       month: 'long',
       day: 'numeric',
       hour: 'numeric',
       minute: '2-digit',
       hour12: true
     };
+    
   
     const formatter = new Intl.DateTimeFormat('en-US', options);
     const parts = formatter.formatToParts(date);
